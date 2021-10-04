@@ -1,0 +1,11 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "YoTest Node.js demo",
+  "main": "index.js",
+  "author": "ErosZy",
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.88.2"
+  }
+}
