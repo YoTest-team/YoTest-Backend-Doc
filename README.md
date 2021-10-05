@@ -5,7 +5,7 @@ YoTest 后端接口及示例
 
 * [示例项目](https://github.com/YoTest-team/YoTest-Backend-Doc#%E7%A4%BA%E4%BE%8B%E9%A1%B9%E7%9B%AE)
 * [仓库入口](https://github.com/YoTest-team/YoTest-Backend-Doc#%E4%BB%93%E5%BA%93%E5%85%A5%E5%8F%A3)
-* [HTTP接口约定](https://github.com/YoTest-team/YoTest-Backend-Doc#http%E7%BA%A6%E5%AE%9A)
+* [HTTP接口约定](https://github.com/YoTest-team/YoTest-Backend-Doc#http%E6%8E%A5%E5%8F%A3%E7%BA%A6%E5%AE%9A)
 
 ### 示例项目
 
