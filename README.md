@@ -14,13 +14,51 @@ YoTest 后端接口及示例
 POST /api/validate HTTP/1.1
 Host: api.fastyotest.com
 Content-Type: application/json
-
-{
-    "token":"验证凭证，需要通过从前端获取",
-    "accessId": "当前项目所属的accessId，可以在后台中进行获取及查看",
-    "accessKey": "当前项目所属的accessKey，可以在后台中进行获取及查看"
-}
 ```
+
+请求入参描述如下：
+
+|      参数名称         |    参数类型   |    描述    |
+| ------------- | ---------- | ---------- |
+| token      | String | 验证凭证，需要通过从前端获取 |
+| accessId      | String | 当前项目所属的accessId，可以在后台中进行获取及查看 |
+| accessKey      | String | 当前项目所属的accessKey，可以在后台中进行获取及查看 |
+
+请求出参描述如下
+
+|      参数名称         |    参数类型   |    描述    |
+| ------------- | ---------- | ---------- |
+| code      | Int | 接口响应码，0：接口请求成功，其他数值则错误 |
+| msg      | Int | 接口响应码对应的信息，0：Success，其他则为错误的相关描述 |
+| data      | Object 或 Null | 具体的请求数据，请参考下方Data字段描述 |
+
+Data字段描述如下所示：
+
+|      参数名称         |    参数类型   |    描述    |
+| ------------- | ---------- | ---------- |
+| status      | Int | 验证状态，0: 未进行验证，1：已验证 |
+| score      | Double | 风险分数，取值为0-100的区间，分数越低则验证风险越高 |
+| visitorId      | String | 访客设备指纹ID，可作为短时间内的用户标识，具有小时级别的时效性，请勿作为用户唯一标识 |
+| platform      | String | 平台标识，可为：web、miniprogram、android、ios |
+| ipInfo      | Object 或 Null | IP风险信息，具体内容请参考下方IP风险信息描述 |
+| mobileInfo      | Object 或 Null | 手机黑号风险信息，在用户进行了短信上行验证后可得，具体内容请参考下方Mobile风险描述 |
+
+IP风险信息描述如下所示：
+
+|      参数名称         |    参数类型   |    描述    |
+| ------------- | ---------- | ---------- |
+| ip      | String | 访问者来源IP |
+| province      | String | IP所在省市信息 |
+| city      | String | IP所在城市信息 |
+| isp      | String | IP所对应的运营商信息 |
+
+Mobile风险信息描述如下所示：
+
+|      参数名称         |    参数类型   |    描述    |
+| ------------- | ---------- | ---------- |
+| mobile      | String | 短信上行验证对应的手机号 |
+| score      | String | 手机号对应的风险分数，取值为0-100的区间，分数越低则风险越高 |
+| tags      | String | 手机号对应的场景信息，包括：营销号，广告号，高风险号等，此字段仅供参考 |
 
 ### 仓库入口：
 <a href="https://gitee.com/yo-test-team/yo-test-backend-doc"><img src="./images/gitee2.png" width="30px"/></a>&nbsp;&nbsp;
