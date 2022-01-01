@@ -18,7 +18,7 @@ func main() {
 	data := make(map[string]interface{})
 	data["token"] = "验证凭证，需要通过从前端请求参数中获取"
 	data["accessId"] = "当前项目所属的accessId，可以在后台中进行获取及查看"
-	data["accessKeys"] = "当前项目所属的accessKey，可以在后台中进行获取及查看"
+	data["accessKey"] = "当前项目所属的accessKey，可以在后台中进行获取及查看"
 	payload, _ := json.Marshal(data)
 
 	url := "https://api.fastyotest.com/api/validate"
